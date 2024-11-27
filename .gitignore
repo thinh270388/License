@@ -1,0 +1,45 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# Build outputs
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+# Models
+License.Models/bin/
+License.Models/obj/
+
+# Services
+License.Services/bin/
+License.Services/obj/
+
+# ASP.NET Core
+License.APIs/bin/
+License.APIs/obj/
+License.APIs/Logs/
+
+# WPF
+License.Desktop/bin/
+License.Desktop/obj/
+
+# MAUI
+License.Mobile/bin/
+License.Mobile/obj/
+
+# Blazor
+License.Web/bin/
+License.Web/obj/
+
+# NuGet Packages
+*.nupkg
+**/packages/*
+*.snupkg
+
+# Logs
+*.log

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="License.Desktop.Views.LoadingBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent"
+             Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}">
+    
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border Background="Red" CornerRadius="10" Padding="20">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Đang nạp dữ liệu..." Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                <Ellipse Width="40" Height="40" Stroke="Gray" StrokeThickness="4" HorizontalAlignment="Center">
+                    <Ellipse.RenderTransform>
+                        <RotateTransform x:Name="LoadingTransform" />
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Triggers>
+                        <EventTrigger RoutedEvent="Ellipse.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="LoadingTransform"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="0" To="360"
+                                        Duration="0:0:1" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Ellipse.Triggers>
+                </Ellipse>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
